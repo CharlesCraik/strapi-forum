@@ -28,7 +28,6 @@ const TrendingDiscussions = () => {
 
     const { loading, error, data } = useQuery(FIND_TRENDING_DISCUSSIONS);
     if (loading) return 'Loading...';
-    console.log(data.forums.data);
     return(
         <div className="trending-discussions-container column">
             <div className="trending-discussions-head">
