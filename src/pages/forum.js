@@ -1,6 +1,7 @@
 import React from "react";
 
 import FeaturedForumsFeed from "../components/feeds/featured-forums";
+import ForumsList from "../components/feeds/forums-list";
 
 const Forum = () => {
     return(
@@ -9,7 +10,7 @@ const Forum = () => {
                 <div className="contain row">
                     <div className="forum-content-container">
                         <FeaturedForumsFeed />
-                        <h3>All Forums</h3>
+                        <ForumsList />
                     </div>
                     <div className="forum-sidebar">
 

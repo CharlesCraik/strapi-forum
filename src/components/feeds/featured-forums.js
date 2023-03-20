@@ -6,7 +6,7 @@ const FeaturedForumsFeed = () => {
 
     const FIND_FEATURED_FORUMS = gql`
     query FIND_FEATURED_FORUMS{
-        forums(filters: {forum_category: {id: {eq: 1}}}){
+        forums(filters: {forum_category: {id: {eq: 1}}}, pagination: {limit: 3}){
         data{
             id
             attributes{
@@ -27,7 +27,6 @@ const FeaturedForumsFeed = () => {
 
     const { loading, error, data } = useQuery(FIND_FEATURED_FORUMS);
     if (loading) return 'Loading...';
-    console.log(data.forums.data);
 
     if (error) return `Error! ${error.message}`;
     return(
