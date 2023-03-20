@@ -15,7 +15,7 @@ const ForumCard = (props) => {
                 </div>
             </div>
             <div className="forum-actions-container align-c row just-e">
-                <a href="#" className="BTN primary">Discover More</a>
+                <a href={`/community/${props.slug}`} className="BTN primary">Discover More</a>
             </div>
         </div>
     );

@@ -1,17 +1,18 @@
 import React from "react";
 import {useQuery, gql} from '@apollo/client';
-import ForumCard from "../cards/forum-card";
+import TrendingDiscussionCard from "../cards/trending-discussion-card";
 
-const ForumsList = () => {
-    const FIND_NON_FEATURED_FORUMS = gql`
-    query FIND_NON_FEATURED_FORUMS{
-        forums(filters: {forum_category: {id: {eq: null}}}){
+
+const TrendingDiscussions = () => {
+
+    const FIND_TRENDING_DISCUSSIONS = gql`
+    query FIND_TRENDING_DISCUSSIONS{
+        forums(pagination: {limit: 5}){
             data{
                 id
                 attributes{
                     title
                     slug
-                    description
                     main_image{
                         data{
                             attributes{
@@ -25,23 +26,26 @@ const ForumsList = () => {
     }
     `;
 
-    const { loading, error, data } = useQuery(FIND_NON_FEATURED_FORUMS);
+    const { loading, error, data } = useQuery(FIND_TRENDING_DISCUSSIONS);
     if (loading) return 'Loading...';
-
     return(
-        <div className="forums-feed column">
+        <div className="trending-discussions-container column">
+            <div className="trending-discussions-head">
+                <h3>Trending Discussions</h3>
+            </div>
+            <div className="trending-discussions-feed">
             {
                 data.forums.data.map((item) => ( 
-                <ForumCard key={item.id}
+                <TrendingDiscussionCard key={item.id}
                 title={item.attributes.title}
                 image={`${process.env.REACT_APP_BACKEND}` + item.attributes.main_image.data.attributes.formats}
                 slug={item.attributes.slug}
-                description={item.attributes.description}
                 />  
                 ))
             }
-        </div>
+            </div>
+        </div> 
     )
 }
 
-export default ForumsList;
+export default TrendingDiscussions

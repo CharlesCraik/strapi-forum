@@ -13,7 +13,7 @@ $white: #FFFFFF;
 
 // fonts
 $body_font: 'Source Sans Pro';
-$title_font: 'Poppins';
+$title_font: 'Space Mono';
 
 
 // foundations
@@ -35,6 +35,13 @@ body{
 h1{
     font-family: $title_font;
     font-weight: 700;
+}
+
+h3{
+    font-family: $title_font;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 1.5px;
 }
 
 p{
@@ -145,7 +152,7 @@ section{
 // details
 .forum-section{
     .forum-content-container{
-        width: 72%;
+        width: 70%;
         .featured-forums-feed{
             width: auto;
             margin: -12px;
@@ -153,7 +160,75 @@ section{
         }
     }
     .forum-sidebar{
-        width: 28%;
+        width: 30%;
+        margin-left: 24px;
+        .current-user-container{
+            background: $tertiary;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid $primary;
+            border-bottom: 6px solid $primary;
+            .current-user-image{
+                min-width: 52px;
+                min-height: 52px;
+                border-radius: 50%;
+                background: $platform;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .current-user-details{
+                margin-left: 16px;
+                .user-name{
+                    font-family: $title_font;
+                    font-weight: 700;
+                    font-size: 18px;
+                    margin-bottom: 2px;
+                }
+                a{
+                    font-weight: 600;
+                    opacity: 0.5;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 14px;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .trending-discussions-container{
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.trending-discussions-container{
+    background: $white;
+    border-radius: 12px;
+    padding: 20px;
+    border: solid 2px $primary;
+    border-bottom: 6px $primary solid;
+    .trending-discussions-head {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: solid 2px #f3f5f7;
+    }
+}
+
+.category-list-container{
+    background: $accent;
+    padding: 20px;
+    border-radius: 12px;
+    border: solid 2px $primary;
+    border-bottom: 6px solid $primary;
+    .category-list-head {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: solid 2px #e9b754;
     }
 }
 
