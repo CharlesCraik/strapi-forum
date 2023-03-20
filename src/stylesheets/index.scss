@@ -1,0 +1,144 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+// colors
+$primary: #171E45;
+$secondary: #E85E04;
+$tertiary: #91CDE2;
+$accent: #F6C35D;
+$platform: #F3F5F7;
+$white: #FFFFFF;
+
+// fonts
+$body_font: 'Source Sans Pro';
+$title_font: 'Space Mono';
+
+
+// foundations
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: $body_font;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    line-height: normal;
+}
+
+h1{
+    font-family: $title_font;
+    font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: $primary;
+    transition: .3s;
+    cursor: pointer;
+    &:hover{
+        transition: .3s;
+    }
+}
+
+// structures
+main{
+    min-height: 100vh;
+}
+
+section{
+    padding: 1em;
+}
+
+.contain{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.align-s{
+    align-items: flex-start;
+}
+
+.align-c{
+    align-items: center;
+}
+
+.align-e{
+    align-items: flex-end;
+}
+
+.just-s{
+    justify-content: flex-start;
+}
+
+.just-c{
+    justify-content: center;
+}
+
+.just-e{
+    justify-content: flex-end;
+}
+
+.just-sb{
+    justify-content: space-between;
+}
+
+.BTN{
+    border: 2px solid $platform;
+    background: $platform;
+    color: $primary;
+    font-family: $body_font;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: .3s;
+    letter-spacing: 1.5px;
+    &:hover{
+        background: $primary;
+        color: $platform;
+        transition: .3s;
+    }
+    &.secondary{
+        border-color: $white;
+        background: none;
+        color: $white;
+        &:hover{
+            background: $white;
+            color: $primary;
+        }
+    }
+}
+
+// details
+.forum-section{
+    .forum-content-container{
+        width: 72%;
+        .featured-forums-feed{
+            width: 100%;
+        }
+    }
+    .forum-sidebar{
+        width: 28%;
+    }
+}
+
+// responsive

@@ -1,0 +1,54 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+// colors
+$primary: #171E45;
+$secondary: #E85E04;
+$tertiary: #91CDE2;
+$accent: #F6C35D;
+$platform: #F3F5F7;
+$white: #FFFFFF;
+
+// fonts
+$body_font: 'Source Sans Pro';
+$title_font: 'Space Mono';
+
+
+// featured forum
+.featured-forum-card{
+    width: calc(100% / 3);
+    margin: 12px;
+    min-height: 360px;
+    max-height: 360px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    &:before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(360deg, rgb(0 0 0 / 55%) 0%, rgb(0 0 0 / 36%) 38%, rgba(255,255,255,0) 100%);
+        top: 0;
+        left: 0;
+    }   
+    .forum-details{
+        z-index: 1;
+        .forum-title{
+            text-align: center;
+            color: $white;
+            font-family: $title_font;
+            font-size: 24px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+    }
+}
