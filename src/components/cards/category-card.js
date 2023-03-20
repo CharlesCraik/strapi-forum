@@ -13,7 +13,7 @@ const CategoryCard = (props) => {
                 <span className="category-title">
                     {props.title}
                 </span>
-                <a href={`/discussions/categories/${props.slug}`} className="category-link">Discover More</a>
+                <a href={`/community/categories/${props.slug}`} className="category-link">Discover More</a>
             </div>
         </div>
     )
