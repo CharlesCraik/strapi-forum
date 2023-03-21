@@ -186,3 +186,17 @@ $title_font: 'Space Mono';
         padding: 0;
     }
 }
+
+
+// topic card
+.topic-card{
+    background: $white;
+    padding: 20px;
+    border-radius: 12px;
+    border: solid 2px $primary;
+    border-bottom: solid 6px $primary;
+    margin-bottom: 24px;
+    &:last-child{
+        margin: 0;
+    }
+}

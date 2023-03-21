@@ -32,7 +32,6 @@ const Discussion = () => {
     const { loading, error, data } = useQuery(FIND_SPECIFIC_DISCUSSION);
     if (loading) return 'Loading...';
     var discussion = data.forums.data[0];
-    console.log(discussion);
     return(
         <main className="main-content">
             <section className="discussion-section">
@@ -44,7 +43,7 @@ const Discussion = () => {
                     <div className="add-topic-container">
                         <AddTopic />
                     </div>
-                    <TopicsFeed />
+                    <TopicsFeed slug={slug}/>
                 </div>
             </section>
         </main>
