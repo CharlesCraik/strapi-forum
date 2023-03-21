@@ -158,6 +158,38 @@ section{
             border-color: $secondary;
         }
     }
+    &.icon{
+        padding: 0;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $platform;
+        border: 0;
+        svg path{
+            transition: .3s;
+        }
+        &:hover{
+            background: $primary;
+            svg path{
+                fill: $white;
+                transition: .3s;
+            }
+        }
+    }
+}
+
+.bubble {
+    background: #e9e9e9;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 16px;
+    &:last-child{
+        margin: 0;
+    }
 }
 
 // community
