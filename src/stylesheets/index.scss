@@ -62,8 +62,19 @@ a{
 
 // structures
 main{
-    min-height: 100vh;
+    height: 100vh;
     background: $platform;
+}
+
+.strech-section {
+    height: 100%;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contain{
+        padding: 1em 0;
+    }
 }
 
 section{
@@ -192,6 +203,67 @@ section{
     }
 }
 
+// auth pages
+.auth-container{
+    background: $accent;
+    padding: 20px;
+    border: solid 2px $primary;
+    border-bottom: solid 6px $primary;
+    border-radius: 12px;
+    .auth-container-head{
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: #e1b356 2px solid;
+    }
+    .auth-container-body{
+        margin-bottom: 24px;
+    }
+    .auth-container-footer{
+        position: relative;
+        a.auth-link{
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.75;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        .auth-options-split{
+            width: 52px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            background: $accent;
+            z-index: 1;
+            color: $white;
+            &::before{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: $white;
+                position: absolute;
+                z-index: -1;
+            }
+            &::after{
+                content: '';
+                width: 52px;
+                height: 68px;
+                background-color: $accent;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+        .BTN{
+            width: auto;
+            align-self: stretch;
+            text-align: center;
+        }
+    }
+}
+
 // community
 .forum-section{
     .forum-content-container{
@@ -290,6 +362,7 @@ section{
         margin-bottom: 24px;
     }
 }
+
 
 
 // responsive

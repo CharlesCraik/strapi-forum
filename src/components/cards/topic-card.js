@@ -24,7 +24,7 @@ const TopicCard = (props) => {
             </div>
             <div className="topic-content-container column align-s">
                 <p>{props.content}</p>
-                <a className="BTN primary" href={window.location.pathname + '/' + props.slug}>Respond</a>
+                <a className="BTN primary" href={window.location.pathname + '/' + props.slug}>Comment</a>
             </div>
         </div>
     );

@@ -2,8 +2,14 @@ import React from "react";
 import '../../stylesheets/form.scss';
 
 const AddTopic = () => {
+
+    const CreateTopic = (event) => {
+        event.preventDefault();
+        console.log('New topic created');
+    }
+
     return(
-        <form className="content-form add-topic column" id="addTopicForm" name="addTopicForm">
+        <form className="content-form add-topic column" id="addTopicForm" name="addTopicForm" onSubmit={CreateTopic}>
             <div className="field-container">
                 <label>Topic Title</label>
                 <input
