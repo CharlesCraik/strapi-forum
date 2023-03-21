@@ -14,7 +14,7 @@ function App() {
     <Router>
       <ApolloProvider client={client}>
         <Routes>
-          <Route path='/' element={<Forum />} />
+          <Route path='/community' element={<Forum />} />
           <Route path="/community/:slug" element={<Discussion />} exact />
         </Routes>
       </ApolloProvider>

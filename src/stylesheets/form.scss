@@ -1,0 +1,54 @@
+// imports
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+// colors
+$primary: #171E45;
+$secondary: #E85E04;
+$tertiary: #91CDE2;
+$accent: #F6C35D;
+$platform: #F3F5F7;
+$white: #FFFFFF;
+
+// fonts
+$body_font: 'Source Sans Pro';
+$title_font: 'Space Mono';
+
+
+// foundation
+label{
+    margin-bottom: 6px;
+    font-family: $body_font;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+input, textarea{
+    background: $white;
+    padding: 12px 16px;
+    border: solid 2px $primary;
+    border-bottom: solid 6px $primary;
+    border-radius: 8px;
+    font-family: $body_font;
+    color: $primary;
+    font-size: 1em;
+}
+
+textarea{
+    resize: none;
+}
+
+// structure
+.field-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+// detail

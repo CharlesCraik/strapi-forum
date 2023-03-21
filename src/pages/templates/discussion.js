@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import { useParams } from "react-router";
 import {useQuery, gql} from '@apollo/client';
 
+import AddTopic from "../../components/forms/add-topic";
+import TopicsFeed from "../../components/feeds/topics";
+
 const Discussion = () => {   
     let {slug} = useParams();
 
@@ -34,7 +37,14 @@ const Discussion = () => {
         <main className="main-content">
             <section className="discussion-section">
                 <div className="contain">
-                    <h1>{discussion.attributes.title}</h1>
+                    <div className="discussion-head row align-c just-sb">
+                        <h1>{discussion.attributes.title}</h1>
+                        <button className="BTN primary" onClick={() => window.history.back()}>Head Back</button>
+                    </div>
+                    <div className="add-topic-container">
+                        <AddTopic />
+                    </div>
+                    <TopicsFeed />
                 </div>
             </section>
         </main>

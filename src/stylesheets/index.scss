@@ -35,6 +35,8 @@ body{
 h1{
     font-family: $title_font;
     font-weight: 700;
+    font-size: 2.8em;
+    letter-spacing: 2px;
 }
 
 h3{
@@ -146,10 +148,19 @@ section{
             background: $white;
             color: $primary;
         }
+    }   
+    &.tertiary{
+        border-color: $primary;
+        background: $primary;
+        color: $white;
+        &:hover{
+            background: $secondary;
+            border-color: $secondary;
+        }
     }
 }
 
-// details
+// community
 .forum-section{
     .forum-content-container{
         width: 70%;
@@ -231,5 +242,21 @@ section{
         border-bottom: solid 2px #e9b754;
     }
 }
+
+
+// discussion template
+.discussion-section{
+    .discussion-head{
+        margin-bottom: 24px;
+    }
+    .add-topic-container{
+        background: $tertiary;
+        padding: 20px;
+        border-radius: 12px;
+        border: solid 2px $primary;
+        border-bottom: solid 6px $primary;
+    }
+}
+
 
 // responsive
