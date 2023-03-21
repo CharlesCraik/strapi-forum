@@ -7,7 +7,7 @@ const FeaturedForumCard = (props) => {
         <div className="featured-forum-card column align-c just-e" style={{backgroundImage: `url(${props.image})`}}>
             <div className="forum-details column">
                 <span className="forum-title">{props.title}</span>
-                <a href="#" className="BTN secondary">Discover More</a>
+                <a href={`/community/${props.slug}`} className="BTN secondary">Discover More</a>
             </div>
         </div>
     );
