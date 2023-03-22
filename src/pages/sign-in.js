@@ -3,7 +3,7 @@ import SignInForm from "../components/forms/sign-in";
 
 const CreateAccount = () => {
     return(
-        <main className="main-content">
+        <main className="main-content stretch">
             <section className="auth-section strech-section">
                 <div className="contain">
                     <div className="auth-container">

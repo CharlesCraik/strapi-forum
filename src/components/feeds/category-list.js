@@ -27,7 +27,6 @@ const CategoryList = () => {
 
     const { loading, error, data } = useQuery(FIND_CATEGORIES);
     if (loading) return 'Loading...';
-    console.log(data.forumCategories.data);
     return(
         <div className="category-list-container column">
             <div className="category-list-head">

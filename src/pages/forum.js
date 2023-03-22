@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import ThisUser from "../util/user-config";
+import GetUser from "../query/get-user";
 
 import FeaturedForumsFeed from "../components/feeds/featured-forums";
 import ForumsList from "../components/feeds/forums-list";
@@ -6,7 +8,11 @@ import TrendingDiscussions from "../components/feeds/trending-discussions";
 import CategoryList from "../components/feeds/category-list";
 
 const Forum = () => {
-    return(
+    const currentUser = GetUser(ThisUser(localStorage.getItem('user')).payload.id);
+    console.log(currentUser);
+
+
+    if(currentUser) return(
         <main className="main-content">
             <section className="forum-section">
                 <div className="contain row">
@@ -20,7 +26,7 @@ const Forum = () => {
                                 <img />
                             </div>
                             <div className="current-user-details column">
-                                <span className="user-name">John Smith</span>
+                                <span className="user-name">{currentUser.attributes.username}</span>
                                 <a href="#">Edit Profile</a>
                             </div>
                         </div>

@@ -3,7 +3,7 @@ import SignUpForm from "../components/forms/sign-up";
 
 const SignIn = () => {
     return(
-        <main className="main-content">
+        <main className="main-content stretch">
             <section className="auth-section strech-section">
                 <div className="contain">
                     <div className="auth-container">

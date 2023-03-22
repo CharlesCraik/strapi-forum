@@ -62,8 +62,11 @@ a{
 
 // structures
 main{
-    height: 100vh;
+    min-height: 100vh;
     background: $platform;
+    &.stretch{
+        height: 100vh;
+    }
 }
 
 .strech-section {
