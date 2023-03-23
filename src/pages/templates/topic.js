@@ -91,7 +91,7 @@ const Topic = () => {
                     </div>
                     <CommentsFeed comments={topic.attributes.comments.data} />
                     <div className="add-comment-container">
-                      <AddCommentForm />  
+                      <AddCommentForm topic={topic.id}/>  
                     </div>
                 </div>
             </section>
