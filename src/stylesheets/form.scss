@@ -51,4 +51,26 @@ textarea{
     }
 }
 
+.field-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    .field-container{
+        margin-bottom: 0;
+        width: calc((100% / 2) - 12px);
+    }
+}
+
+.actions-container{
+    margin-top: 12px;
+    &.full-width{
+        width: 100%;
+        .BTN{
+            width: 100%;
+        }
+    }
+}
+
 // detail

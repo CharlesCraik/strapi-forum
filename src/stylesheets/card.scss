@@ -208,7 +208,7 @@ $title_font: 'Space Mono';
         }
     }
     .topic-card-meta {
-        margin: 20px 0;
+        margin-bottom: 24px;
         .topic-creator-container{
             .topic-author{
                 text-transform: none;
@@ -239,4 +239,37 @@ $title_font: 'Space Mono';
     &:last-child{
         margin: 0;
     }
+}
+
+
+// comment card
+.comment-card{
+    background: $white;
+    padding: 20px;
+    border-radius: 12px;
+    border: solid 2px $primary;
+    border-bottom: solid 6px $primary;
+    margin-bottom: 24px;
+    .comment-head{
+        margin-bottom: 8px;
+        .comment-title{
+            font-family: $title_font;
+            font-size: 24px;
+            letter-spacing: 1.5px;
+        }
+    }
+    .comment-body{
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: solid 2px $platform;
+    }
+    .comment-footer{
+        .author-container, .date-container{
+            .author, .date{
+                color: $primary;
+                opacity: 0.5;
+            }
+        }
+    }
+
 }
