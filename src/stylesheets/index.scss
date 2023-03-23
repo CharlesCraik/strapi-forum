@@ -367,5 +367,20 @@ section{
 }
 
 
+// topic template
+.topic-content{
+    .topic-head{
+        margin-bottom: 24px;
+    }
+    .topic-content-container{
+        background: $accent;
+        padding: 20px;
+        border-radius: 12px;
+        border: solid 2px $primary;
+        border-bottom: solid 6px $primary;
+        margin-bottom: 24px;
+    }
+}
+
 
 // responsive
