@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams } from "react-router";
 import {useQuery, gql} from '@apollo/client';
 import AddCommentForm from "../../components/forms/add-comment";
@@ -16,6 +16,7 @@ const Topic = () => {
                     title
                     slug
                     content
+                    createdAt
                   	author{
                       data{
                         id
@@ -67,7 +68,7 @@ const Topic = () => {
 
     const { loading, error, data } = useQuery(FIND_SPECIFIC_TOPIC);
     if (loading) return 'Loading...';
-    console.log(data.topics.data[0]);
+    var publishDate = new Date(data.topics.data[0].attributes.createdAt);
     var topic = data.topics.data[0];
     return(
         <main className="main-content">
@@ -78,7 +79,15 @@ const Topic = () => {
                         <button className="BTN primary" onClick={() => window.history.back()}>Head Back</button>
                     </div>
                     <div className="topic-content-container">
-                      {topic.attributes.content}
+                      <p>{topic.attributes.content}</p>
+                      <div className="topic-content-meta-container row align-c just-sb">
+                        <div className="author-container">
+                          <span className="author">Posted By <b>{topic.attributes.author.data.attributes.username}</b></span>
+                        </div>
+                        <div className="date-container">
+                          <span className="date">{publishDate.toLocaleDateString()}</span>
+                        </div>
+                      </div>
                     </div>
                     <CommentsFeed comments={topic.attributes.comments.data} />
                     <div className="add-comment-container">

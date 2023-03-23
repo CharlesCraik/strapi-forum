@@ -379,6 +379,18 @@ section{
         border: solid 2px $primary;
         border-bottom: solid 6px $primary;
         margin-bottom: 24px;
+        > p{
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+            border-bottom: solid 2px #e1b356;
+        }
+    }
+    .add-comment-container{
+        padding: 20px;
+        border: solid 2px $primary;
+        border-bottom: solid 6px $primary;
+        background: $tertiary;
+        border-radius: 12px;
     }
 }
 
