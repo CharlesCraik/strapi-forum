@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Discussion from "./pages/templates/discussion";
 import SignIn from "./pages/sign-in";
 import CreateAccount from "./pages/create-account";
+import Topic from "./pages/templates/topic";
 
 const client = new ApolloClient({
   uri: 'http://localhost:1337/graphql',
@@ -22,6 +23,8 @@ function App() {
         <Routes>
           <Route path='/community' element={<Forum />} />
           <Route path="/community/:slug" element={<Discussion />} exact />
+          <Route path="/community/:parent/:slug" element={<Topic />} exact />
+          <Route path="/community/categories/:slug" element={<SignIn />} exact />
         </Routes>
       </ApolloProvider>
     </Router>

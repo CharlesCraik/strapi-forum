@@ -23,6 +23,25 @@ const Discussion = () => {
                             }
                         }
                     }
+                    topics{
+                        data{
+                        id
+                        attributes{
+                            title
+                            author{
+                                data{
+                                    id
+                                    attributes{
+                                        username
+                                    }
+                                }
+                            }
+                            createdAt
+                            slug
+                            content
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -41,9 +60,9 @@ const Discussion = () => {
                         <button className="BTN primary" onClick={() => window.history.back()}>Head Back</button>
                     </div>
                     <div className="add-topic-container">
-                        <AddTopic />
+                        <AddTopic forum={discussion.id}/>
                     </div>
-                    <TopicsFeed slug={slug}/>
+                    <TopicsFeed forum={discussion.id} topics={discussion.attributes.topics}/>
                 </div>
             </section>
         </main>

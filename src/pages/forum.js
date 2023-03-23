@@ -6,13 +6,16 @@ import FeaturedForumsFeed from "../components/feeds/featured-forums";
 import ForumsList from "../components/feeds/forums-list";
 import TrendingDiscussions from "../components/feeds/trending-discussions";
 import CategoryList from "../components/feeds/category-list";
+import { useNavigate } from "react-router-dom";
 
 const Forum = () => {
+    var navigate = useNavigate();
     const currentUser = GetUser(ThisUser(localStorage.getItem('user')).payload.id);
     console.log(currentUser);
 
 
-    if(currentUser) return(
+    if(currentUser){
+        return(
         <main className="main-content">
             <section className="forum-section">
                 <div className="contain row">
@@ -36,7 +39,8 @@ const Forum = () => {
                 </div>
             </section>
         </main>
-    )
+        )
+    }
 }
 
 export default Forum;
