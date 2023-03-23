@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router";
 import {useQuery, gql} from '@apollo/client';
+import AddCommentForm from "../../components/forms/add-comment";
+import CommentsFeed from "../../components/feeds/comments";
 
 const Topic = () => {
     let {slug} = useParams();
@@ -19,6 +21,24 @@ const Topic = () => {
                         id
                         attributes{
                           username
+                        }
+                      }
+                    }
+                    comments{
+                      data{
+                        id
+                        attributes{
+                          title
+                          content
+                          createdAt
+                          author{
+                            data{
+                              id
+                              attributes{
+                                username
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -57,13 +77,13 @@ const Topic = () => {
                         <h1>{topic.attributes.title}</h1>
                         <button className="BTN primary" onClick={() => window.history.back()}>Head Back</button>
                     </div>
-                    <div className="add-comment-container">
-                        
-                    </div>
                     <div className="topic-content-container">
-
+                      {topic.attributes.content}
                     </div>
-                    
+                    <CommentsFeed comments={topic.attributes.comments.data} />
+                    <div className="add-comment-container">
+                      <AddCommentForm />  
+                    </div>
                 </div>
             </section>
         </main>
