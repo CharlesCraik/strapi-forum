@@ -17,6 +17,7 @@ const Topic = () => {
                     slug
                     content
                     createdAt
+                    likes
                   	author{
                       data{
                         id

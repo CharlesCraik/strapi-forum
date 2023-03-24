@@ -11,7 +11,11 @@ import { useNavigate } from "react-router-dom";
 const Forum = () => {
     var navigate = useNavigate();
     const currentUser = GetUser(ThisUser(localStorage.getItem('user')).payload.id);
-    console.log(currentUser);
+
+    const SignOut = () => {
+        localStorage.removeItem('user');
+        navigate('/');
+    }
 
 
     if(currentUser){
@@ -30,7 +34,7 @@ const Forum = () => {
                             </div>
                             <div className="current-user-details column">
                                 <span className="user-name">{currentUser.attributes.username}</span>
-                                <a href="#">Edit Profile</a>
+                                <a href="#" onClick={SignOut}>Sign Out</a>
                             </div>
                         </div>
                         <TrendingDiscussions />
