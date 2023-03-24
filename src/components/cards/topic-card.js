@@ -1,16 +1,41 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../../stylesheets/card.scss';
-import { Archive } from "iconsax-react";
+import { Like1 } from "iconsax-react";
+import ThisUser from "../../util/user-config";
+import {useMutation, gql} from '@apollo/client';
 
 const TopicCard = (props) => {
     const [publishDate] = useState(new Date(props.published));
+    const [likes, setLikes] = useState(props.likes);
 
+    const LIKE_TOPIC = gql`
+    mutation TOPIC_LIKE(
+        $likes: Int
+    ){
+        updateTopic(id: ${props.identifier}, data:{likes: $likes}){
+            data{
+                id
+                attributes{
+                    likes
+                }
+            }
+        }
+    }
+    `;
+
+    const [LikeTopic, {data, error}] = useMutation(LIKE_TOPIC, {
+        variables: {
+            likes: likes
+        }
+    
+    });
+    
     return(
         <div className="topic-card column">
             <div className="topic-card-head row just-sb align-c">
                 <span className="topic-title">{props.title}</span>
                 <div className="topic-short-actions-container row align-c just-e">
-                    <button className="BTN icon" name="save-for-later"><Archive size="24" color="#171E45" variant="Outline"/></button>
+                    <button className="BTN icon" name="like-post" onClick={() => {setLikes(likes + 1); LikeTopic()}}><Like1 size="24" color="#171E45" variant="Outline"/></button>
                 </div>
             </div>
             <div className="topic-card-meta row just-sb align-c">

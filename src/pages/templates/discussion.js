@@ -16,6 +16,7 @@ const Discussion = () => {
                 attributes{
                     title
                     slug
+                    description
                     main_image{
                         data{
                             attributes{
@@ -28,6 +29,7 @@ const Discussion = () => {
                         id
                         attributes{
                             title
+                            likes
                             author{
                                 data{
                                     id
@@ -58,6 +60,9 @@ const Discussion = () => {
                     <div className="discussion-head row align-c just-sb">
                         <h1>{discussion.attributes.title}</h1>
                         <button className="BTN primary" onClick={() => window.history.back()}>Head Back</button>
+                    </div>
+                    <div className="discussion-content">
+                        {discussion.attributes.description}
                     </div>
                     <div className="add-topic-container">
                         <AddTopic forum={discussion.id}/>

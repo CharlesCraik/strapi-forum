@@ -353,6 +353,14 @@ section{
 
 // discussion template
 .discussion-section{
+    .discussion-content{
+        margin-bottom: 24px;
+        background: $accent;
+        padding: 20px;
+        border-radius: 12px;
+        border: solid 2px $primary;
+        border-bottom: solid 6px $primary;
+    }
     .discussion-head{
         margin-bottom: 24px;
     }

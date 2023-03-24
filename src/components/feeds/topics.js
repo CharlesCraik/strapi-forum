@@ -1,6 +1,5 @@
-import { Sort } from "iconsax-react";
-import React from "react";
 
+import React from "react";
 import TopicCard from "../cards/topic-card";
 
 
@@ -30,7 +29,6 @@ const TopicsFeed = (props) => {
     // `;
     // const { loading, error, data } = useQuery(FIND_FORUM_TOPICS);
     // if (loading) return 'Loading...';
-
     return(
         <div className="topics-feed column">
             {
@@ -41,6 +39,8 @@ const TopicsFeed = (props) => {
                 content={item.attributes.content}
                 author={item.attributes.author.data.attributes.username}
                 published={item.attributes.createdAt}
+                identifier={item.id}
+                likes={item.attributes.likes}
                 />  
                 ))
             }
