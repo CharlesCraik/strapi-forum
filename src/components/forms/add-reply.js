@@ -8,7 +8,7 @@ import GetUser from "../../query/get-user";
 
 const AddReplyForm = (props) => {
     const [allReplies, setAllReplies] = useState();
-    const [userReply, setUserReply] = useState();
+    const [userReply, setUserReply] = useState('Empty Comment');
     const currentUser = GetUser(ThisUser(localStorage.getItem('user')).payload.id);
 
     useEffect(() => {
@@ -53,7 +53,6 @@ const AddReplyForm = (props) => {
                     placeholder="Reply to this comment"
                     cols="auto"
                     rows="1"
-                    required
                     onChange={(e) => setUserReply(e.target.value)}
                 />
                 <button type="submit" className="BTN inline-input" id="addReply"><MessageAdd1 size="20" color="#84889d" variant="Outline"/></button>
