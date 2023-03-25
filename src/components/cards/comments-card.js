@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import RepliesFeed from "../feeds/replies";
+import AddReplyForm from "../forms/add-reply";
 
 const CommentCard = (props) => {
     const [publishDate] = useState(new Date(props.published));
@@ -19,6 +21,12 @@ const CommentCard = (props) => {
                     <span className="date">{publishDate.toLocaleDateString()}</span>
                 </div>
             </div>
+            <div className="reply-container column">
+                <div className="reply-form-container">
+                    <AddReplyForm commentID={props.identifier} />
+                </div>
+                <RepliesFeed comment={props.identifier} />
+            </div> 
         </div>
     )
 }

@@ -271,5 +271,35 @@ $title_font: 'Space Mono';
             }
         }
     }
+    .reply-container{
+        .reply-form-container{
+            margin-top: 20px;
+        }
+    }
 
+}
+
+// reply card
+.reply-card{
+    margin-bottom: 20px;
+    .author-image-container{
+        width: 48px;
+        height: 48px;
+        background: $platform;
+        border-radius: 50px;
+    }
+    .reply-content-container{
+        margin-left: 12px;
+        .author-username{
+            margin-bottom: 6px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+    }
+    &:last-child{
+        margin: 0;
+    }
+    &:first-child{
+        margin-top: 20px;
+    }
 }

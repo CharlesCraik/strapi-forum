@@ -41,6 +41,12 @@ textarea{
     resize: none;
 }
 
+.flat-input{
+    border: 0;
+    background: $platform;
+    width: 100%;
+}
+
 // structure
 .field-container{
     display: flex;
@@ -71,6 +77,15 @@ textarea{
             width: 100%;
         }
     }
+}
+
+.inline-field-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 // detail
