@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, {useEffect} from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import Forum from "./pages/forum";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Discussion from "./pages/templates/discussion";
@@ -12,7 +12,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-function App() {
+function App() { 
+
+  if(!localStorage.getItem('user') && window.location.pathname != '/' && window.location.pathname != '/create-account'){
+    window.location.href = '/';
+  }
+
   return (
     <Router>
       <ApolloProvider client={client}>
