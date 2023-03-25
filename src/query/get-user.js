@@ -10,7 +10,7 @@ const GetUser = (userID) => {
                     attributes{
                         username
                         email
-                        liked_posts
+
                     }
                 }
             }

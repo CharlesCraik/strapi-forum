@@ -13,6 +13,7 @@ const CommentsFeed = (props) => {
                 content={item.attributes.content}
                 author={item.attributes.author.data.attributes.username}
                 published={item.attributes.createdAt}
+                identifier={item.id}
                 />  
                 ))
             }

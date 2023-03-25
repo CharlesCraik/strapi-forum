@@ -27,16 +27,15 @@ const TopicCard = (props) => {
         variables: {
             likes: likes
         }
-    
     });
-    
+
     return(
         <div className="topic-card column">
             <div className="topic-card-head row just-sb align-c">
                 <span className="topic-title">{props.title}</span>
-                <div className="topic-short-actions-container row align-c just-e">
+                {/* <div className="topic-short-actions-container row align-c just-e">
                     <button className="BTN icon" name="like-post" onClick={() => {setLikes(likes + 1); LikeTopic()}}><Like1 size="24" color="#171E45" variant="Outline"/></button>
-                </div>
+                </div> */}
             </div>
             <div className="topic-card-meta row just-sb align-c">
                 <div className="topic-creator-container column">
